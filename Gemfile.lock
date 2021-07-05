@@ -184,7 +184,7 @@ GEM
       parser (>= 2.7.1.5)
     ruby-macho (1.4.0)
     ruby-progressbar (1.10.1)
-    rubyzip (2.3.0)
+    rubyzip (2.3.1)
     signet (0.14.0)
       addressable (~> 2.3)
       faraday (>= 0.17.3, < 2.0)
@@ -224,7 +224,7 @@ DEPENDENCIES
   minitest (~> 5.14)
   rake (~> 13.0)
   rubocop (~> 0.93.1)
-  rubyzip (~> 2.3.0)
+  rubyzip (~> 2.3.1)
   simctl (~> 1.6)
   xcodeproj (~> 1.19)
 
