@@ -69,7 +69,7 @@ extension Target {
         sources: SourceFilesList = "Sources/**",
         resources: ResourceFileElements = "Resources/**",
         headers: Headers? = nil,
-        entitlements: Path? = Path("app.entitlements"),
+        entitlements: InfoPlist? = .file(path: Path("app.entitlements")),
         scripts: [TargetScript] = [],
         dependencies: [TargetDependency] = [],
         settings: Settings? = nil,

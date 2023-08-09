@@ -27,7 +27,7 @@ public struct Target: Equatable, Hashable, Comparable, Codable {
     // An info.plist file is needed for (dynamic) frameworks, applications and executables
     // however is not needed for other products such as static libraries.
     public var infoPlist: InfoPlist?
-    public var entitlements: AbsolutePath?
+    public var entitlements: InfoPlist?
     public var settings: Settings?
     public var dependencies: [TargetDependency]
     public var sources: [SourceFile]
@@ -55,7 +55,7 @@ public struct Target: Equatable, Hashable, Comparable, Codable {
         bundleId: String,
         deploymentTargets: DeploymentTargets = DeploymentTargets(),
         infoPlist: InfoPlist? = nil,
-        entitlements: AbsolutePath? = nil,
+        entitlements: InfoPlist? = nil,
         settings: Settings? = nil,
         sources: [SourceFile] = [],
         resources: [ResourceFileElement] = [],
@@ -276,7 +276,6 @@ public struct Target: Equatable, Hashable, Comparable, Codable {
         hasher.combine(product)
         hasher.combine(bundleId)
         hasher.combine(productName)
-        hasher.combine(entitlements)
         hasher.combine(environment)
     }
 

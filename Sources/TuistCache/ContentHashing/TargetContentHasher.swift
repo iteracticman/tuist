@@ -124,7 +124,7 @@ public final class TargetContentHasher: TargetContentHashing {
             stringsToHash.append(infoPlistHash)
         }
         if let entitlements = graphTarget.target.entitlements {
-            let entitlementsHash = try contentHasher.hash(path: entitlements)
+            let entitlementsHash = try infoPlistContentHasher.hash(plist: entitlements)
             stringsToHash.append(entitlementsHash)
         }
         if let settings = graphTarget.target.settings {

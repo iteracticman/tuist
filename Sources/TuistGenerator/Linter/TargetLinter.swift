@@ -174,7 +174,9 @@ class TargetLinter: TargetLinting {
 
     private func lintEntitlementsExist(target: Target) -> [LintingIssue] {
         var issues: [LintingIssue] = []
-        if let path = target.entitlements, !FileHandler.shared.exists(path) {
+        if let entitlements = target.entitlements,
+           case let InfoPlist.file(path: path) = entitlements,
+           !FileHandler.shared.exists(path) {
             issues.append(LintingIssue(reason: "Entitlements file not found at path \(path.pathString)", severity: .error))
         }
         return issues
